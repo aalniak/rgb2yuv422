@@ -160,28 +160,31 @@ tdata_out <= ("0000000000000000" & transfer_data);
           );
           
     U <= std_logic_vector( 
-          unsigned(std_logic_vector'("000"& R(7 downto 3))) +
-          unsigned(std_logic_vector'("000000"& R(7 downto 6))) +
-          unsigned(std_logic_vector'("0000000"& R(7 downto 7))) +
-          
-          unsigned(std_logic_vector'("00"& G(7 downto 2))) +
-          unsigned(std_logic_vector'("00000"& G(7 downto 5))) +
-          unsigned(std_logic_vector'("0000000"& G(7 downto 7))) +
-          
-          
+    
           unsigned(std_logic_vector'("00"& B(7 downto 2))) +
           unsigned(std_logic_vector'("000"& B(7 downto 3))) +
-          unsigned(std_logic_vector'("0000"& B(7 downto 4))) 
+          unsigned(std_logic_vector'("0000"& B(7 downto 4))) -
+          
+          unsigned(std_logic_vector'("00"& G(7 downto 2))) -
+          unsigned(std_logic_vector'("00000"& G(7 downto 5))) -
+          unsigned(std_logic_vector'("0000000"& G(7 downto 7))) -
+          
+          unsigned(std_logic_vector'("000"& R(7 downto 3))) -
+          unsigned(std_logic_vector'("000000"& R(7 downto 6))) -
+          unsigned(std_logic_vector'("0000000"& R(7 downto 7))) 
+          
+          
+          
           );
      
      V <= std_logic_vector( 
           unsigned(std_logic_vector'("0"& R(7 downto 1))) +
-          unsigned(std_logic_vector'("000"& R(7 downto 3))) +
+          unsigned(std_logic_vector'("000"& R(7 downto 3))) -
                  
-          unsigned(std_logic_vector'("0"& G(7 downto 1))) +
+          unsigned(std_logic_vector'("0"& G(7 downto 1))) -
           
-          unsigned(std_logic_vector'("0000"& B(7 downto 4))) +
-          unsigned(std_logic_vector'("00000"& B(7 downto 5))) +
+          unsigned(std_logic_vector'("0000"& B(7 downto 4))) -
+          unsigned(std_logic_vector'("00000"& B(7 downto 5))) -
           unsigned(std_logic_vector'("00000000"& B(7 downto 7))) 
           );
           
