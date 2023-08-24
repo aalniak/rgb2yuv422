@@ -185,7 +185,7 @@ tdata_out <= ("0000000000000000" & transfer_data);
           
           unsigned(std_logic_vector'("0000"& B(7 downto 4))) -
           unsigned(std_logic_vector'("00000"& B(7 downto 5))) -
-          unsigned(std_logic_vector'("00000000"& B(7 downto 7))) 
+          unsigned(std_logic_vector'("0000000"& B(7 downto 7))) 
           );
           
     
